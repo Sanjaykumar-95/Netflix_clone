@@ -6,7 +6,6 @@ import "../components/netflix.css"
 
 function Header() {
     const inputStyle = {
-        color: 'white',
         border: '1px solid white',
       };
 
