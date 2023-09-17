@@ -44,7 +44,7 @@ img{
     position: relative;
     background: url("../Images/back.jpg") no-repeat center center/cover;
     /* box-shadow: 120px 100px 200px #000001, inset -105px -191px 144px #000000; */
-    box-shadow: 120px 100px 200px #000001, inset 140px 127px 203px #000000;
+    box-shadow: 120px 100px 200px #000001, inset 92px 72px 203px #000000;
     /* box-shadow: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%); */
 }
 

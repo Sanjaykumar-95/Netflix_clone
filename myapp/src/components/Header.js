@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Nlogo from "../Images/Nlogo.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../components/netflix.css"
@@ -13,11 +14,13 @@ function Header() {
         filter: 'brightness(100%)', // Increase brightness as needed
       };
 
+      const navigate = useNavigate();
+
   return (
     <header className="showcase">
       <div className="showcase-top">
-        <img src={Nlogo} alt="Netflix Logo" style={logoStyle} />
-        <button className="btn btn-danger sign">Sign In</button>
+      <img src={Nlogo} alt="Netflix Logo" onClick={() => navigate("/")} style={{cursor: 'pointer'}}/>
+        <button className="btn btn-danger sign" onClick={() => navigate("/signin")}>Sign In</button>
       </div>
       <div className="showcase-content">
         {/* <p>Welcome back!</p> */}
