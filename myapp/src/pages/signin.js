@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/sign.css";
 import Nlogo from "../Images/Nlogo.png";
@@ -6,6 +6,21 @@ import Nlogo from "../Images/Nlogo.png";
 function Signin() {
 
     const navigate = useNavigate();
+    const [email,setEmail]= useState("");
+    const [password,setPassword]= useState("");
+    const [error,setError]= useState("");
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        if(email === "sanjaypandu8855@gmail.com" && password==="Sanjay@1432"){
+            navigate("/in");
+        }
+        else{
+            setError(true);
+        }
+    }
+    
 
     return(
         <div className="login-form">
@@ -16,14 +31,23 @@ function Signin() {
                 <div className="card" >
                     <div className="login-form-main">
                         <h1 className="login-form-title">Sign In</h1>
+
+                        {error && (
+                            <div className="error-message">
+                                Incorrect password. Please try again or you can
+                                &nbsp;
+                                <a href="#" style={{color:'white'}}>reset your password</a>
+                            </div>
+                        )}
+
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={handleLogin}>
                                 <div className="form-group">
-                                    <input type="email" className="form-control input1" placeholder="Email or Phone number" />
+                                    <input type="email" className="form-control input1" placeholder="Email or Phone number" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
                                 
                                 <div className="form-group" style={{marginTop: '18px'}}>
-                                    <input type="password" className="form-control input2" placeholder="Enter password" />
+                                    <input type="password" className="form-control input2" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
                                 <div className="form-group" style={{marginTop: '30px'}}>
                                     <button className="btn btn-danger login-button">Signin</button>
@@ -40,7 +64,7 @@ function Signin() {
 
                     <div className="login-form-option" style={{marginTop: '20px'}}>
                         <span style={{fontSize: '14px', color:'#737373'}}>New to Netflix? </span>
-                        <a href="#" style={{textDecoration: 'none', color:'white', fontSize: '15px'}}>Sign up now.</a>
+                        <a href="/" style={{textDecoration: 'none', color:'white', fontSize: '15px'}}>Sign up now.</a>
                         <p style={{fontSize: '13px', fontWeight: 'initial', color:'#737373'}}>
                         This page is protected by Google reCAPTCHA to ensure you're not a bot. 
                         <span style={{color: '#0071eb'}}>Learn more.</span>

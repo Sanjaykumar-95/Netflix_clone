@@ -47,3 +47,10 @@
 .login-button{
     width: 100%;
 }
+
+.error-message{
+    background-color: orange;
+    color: white;
+    padding: 8px 5px;
+    border-radius: 5px;
+}

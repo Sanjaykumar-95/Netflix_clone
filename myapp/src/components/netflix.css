@@ -45,7 +45,6 @@ img{
     background: url("../Images/back.jpg") no-repeat center center/cover;
     /* box-shadow: 120px 100px 200px #000001, inset -105px -191px 144px #000000; */
     box-shadow: 120px 100px 200px #000001, inset 92px 72px 203px #000000;
-    /* box-shadow: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%); */
 }
 
 .showcase-top{
@@ -236,14 +235,14 @@ img{
     align-items: center;
 }
 
-.questions li{
+.qes , .questions li{
     padding: 20px 30px;
     margin: 5px;
     font-size: 1.6rem;
     background-color: #303030;
     color: white;
     text-align: left;
-    width: 50%;
+    width: 75%;
 }
 
 .questions li:hover{
