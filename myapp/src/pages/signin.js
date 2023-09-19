@@ -13,7 +13,10 @@ function Signin() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        if(email === "sanjaypandu8855@gmail.com" && password==="Sanjay@1432"){
+        if(email === "sanjayhema@gmail.com" && password==="Heku@1432"){
+            navigate("/in");
+        }
+        else if(email === "sanjaykumark8855@gmail.com" && password==="Sanjay1234"){
             navigate("/in");
         }
         else{
@@ -71,6 +74,14 @@ function Signin() {
                         </p>
                     </div>
                 </div>
+
+                {error && (
+                    <div className="error-message">
+                        Invalid logins, backend was not used so present please try with username: "sanjaykumark8855@gmail.com" an password: "Sanjay1234".
+                    </div>
+                )}
+
+
             </div>
         </div>
     )

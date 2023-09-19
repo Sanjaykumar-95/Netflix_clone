@@ -46,7 +46,7 @@ function Header() {
         )}
 
         <div className="input-group mb-5 textstart">
-            <div className="input-group mb-5 text">
+            <div className="input-group mb-5 text" style={{display:'flex', columnGap:'10px'}}>
 
               {islocation || (
                 <input type="email" className="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2" style={inputStyle} required/>
@@ -57,7 +57,11 @@ function Header() {
               )}
 
               {islocation && (
-                <button className="btn btn-lg btn-danger" style={{ backgroundColor: 'red' }}> Finish Sign Up &emsp; <span style={{ fontSize: '25px' }}> > </span></button>        
+                <button className="btn btn-lg btn-danger" style={{ backgroundColor: 'red' }} onClick={() => navigate("/movies")}> Movies &emsp; <span style={{ fontSize: '25px' }}> > </span></button>        
+              )}
+
+              {islocation && (
+                <button className="btn btn-lg btn-danger" style={{ backgroundColor: 'red' }}>Finish Sign Up &emsp; <span style={{ fontSize: '25px' }}> > </span></button>        
               )}
 
             </div>

@@ -177,7 +177,7 @@ function Section(){
                 )}
 
                 {islocation && (
-                    <button className="btn btn-lg btn-danger" style={{ backgroundColor: 'red'}}> Finish Sign Up &emsp; <span style={{ fontSize: '25px' }}> > </span></button>        
+                    <button className="btn btn-lg btn-danger" style={{ backgroundColor: 'red', fontWeight:'bold', marginTop:'15px'}}> Finish Sign Up &emsp; <span style={{ fontSize: '25px' }}> > </span></button>        
                 )}
 
             </div>

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    margin-right: 0;
+}
+
+.row ul{
+    display: flex;
+    column-gap: 17px;
+    row-gap: 18px;
+    flex-wrap: wrap;
+}
+
+.row ul li{
+    width: 200px;
+}
+
+.row ul li a img:hover{
+    transform: scale(1.2);
+}
