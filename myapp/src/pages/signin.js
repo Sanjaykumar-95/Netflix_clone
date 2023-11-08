@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin,useGoogleLogin  } from '@react-oauth/google';
 import "../pages/sign.css";
 import Nlogo from "../Images/Nlogo.png";
 
@@ -13,17 +14,17 @@ function Signin() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        if(email === "sanjayhema@gmail.com" && password==="Heku@1432"){
+        if ((email === "sanjayhema@gmail.com" && password === "Heku@1432") ||
+            (email === "sanjaykumark8855@gmail.com" && password === "Sanjay1234")) {
             navigate("/in");
-        }
-        else if(email === "sanjaykumark8855@gmail.com" && password==="Sanjay1234"){
-            navigate("/in");
-        }
-        else{
+        } else {
             setError(true);
         }
     }
-    
+
+    const handleLoginSuccess = () => {
+        navigate('/in');
+    };
 
     return(
         <div className="login-form">
@@ -55,10 +56,21 @@ function Signin() {
                                 <div className="form-group" style={{marginTop: '30px'}}>
                                     <button className="btn btn-danger login-button">Signin</button>
                                 </div>
+
+                                <div className="form-group google-login-button" style={{marginTop:'25px'}}>
+
+                                    <GoogleLogin
+                                        onSuccess={handleLoginSuccess}
+                                        onError={() => {
+                                        console.log('Login Failed');
+                                        }}
+                                    />
+
+                                </div>
                                 
                                 <div className="login-form-help" style={{marginTop: '10px'}}>
                                     <div className="login-form-forgotPass" style={{textAlign:'center'}}>
-                                        <a href="#" style={{textDecoration: 'none', color:'white', fontSize: '15px'}}>Forgot password?</a>
+                                        <button style={{color:'white', fontSize:'15px', backgroundColor:'transparent', border:'none'}}>Forgot password?</button>
                                     </div>
                                 </div>
                             </form>
@@ -75,11 +87,11 @@ function Signin() {
                     </div>
                 </div>
 
-                {error && (
+                {/* {error && (
                     <div className="error-message">
                         Invalid logins, backend was not used so present please try with username: "sanjaykumark8855@gmail.com" an password: "Sanjay1234".
                     </div>
-                )}
+                )} */}
 
 
             </div>
